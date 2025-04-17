@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 2em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 1em;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 300px; /* Main content takes up remaining space, sidebar is 300px */
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        main {
+            grid-column: 1 / 2; /* Spans from the first to the second grid line (takes the first column) */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Creates responsive columns */
+            grid-gap: 20px;
+        }
+
+        .main-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        aside {
+            grid-column: 2 / 3; /* Spans from the second to the third grid line (takes the second column) */
+            background-color: #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: sticky; /* Example of sticky footer */
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* --- Media Queries for Responsiveness --- */
+
+        /* For smaller screens (up to 768px) */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column; /* Stack navigation items vertically */
+                align-items: center;
+            }
+
+            .container {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+
+            main {
+                grid-column: 1; /* Main content takes the full width */
+            }
+
+            aside {
+                grid-column: 1; /* Sidebar also takes the full width */
+            }
+        }
+
+        /* For even smaller screens (up to 480px) */
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.2em;
+                padding: 0.8em 1em;
+            }
+
+            main {
+                grid-template-columns: 1fr; /* Single column for main content sections */
+            }
+
+            .main-section,
+            aside {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Responsive Webpage</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section class="main-section">
+                <h2>Section 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </section>
+            <section class="main-section">
+                <h2>Section 2</h2>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section class="main-section">
+                <h2>Section 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </section>
+        </main>
+        <aside>
+            <h3>Sidebar</h3>
+            <div class="sidebar-item">Item 1</div>
+            <div class="sidebar-item">Item 2</div>
+            <div class="sidebar-item">Item 3</div>
+            <div class="sidebar-item">Item 4</div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Responsive Webpage</p>
+    </footer>
+</body>
+</html>

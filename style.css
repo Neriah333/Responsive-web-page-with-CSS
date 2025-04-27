@@ -1,0 +1,46 @@
+/* style.css */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif; /* Different font */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Header Styles */
+#main-header { /* ID Selector */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 20px;
+}
+
+/* Image Styles */
+.hero-image { /* Class Selector */
+  display: block;
+  margin: 20px auto;
+  max-width: 80%;
+  height: auto;
+  border: 5px solid #ddd; /* Border */
+  border-radius: 8px;
+}
+
+/* Paragraph Styles */
+p { /* Element Selector */
+  margin: 10px 20px;
+  padding: 15px; /* Padding */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-top: 2px solid #ccc;
+}
